@@ -1,0 +1,14 @@
+Overview:                                                                     
+ 
+This module introduces learners to the fundamental concepts of CSS3, a cornerstone technology for 
+designing visually engaging, responsive, and user-friendly websites. Starting from understanding the 
+need and benefits of CSS, learners will explore how to set up and apply CSS to HTML documents 
+effectively. The module covers basic syntax, commenting, and the three primary ways of including 
+CSS: inline, embedded, and external. Building on this foundation, the course dives into CSS3 selectors,
+enabling learners to target and style HTML elements efficiently. It then covers essential properties for 
+managing color, backgrounds, fonts, text formatting, hyperlinks, lists, and tables. 
+The module also introduces the critical concept of the CSS Box Model, explaining margins, padding, 
+borders, outlines, and the difference between visibility and display properties. Learners will further 
+explore layout enhancements like multiple columns. 
+Finally, the module culminates with an introduction to Media Queries and Responsive Web Design 
+(RWD) — crucial for creating adaptable websites that look great on devices of all sizes.
