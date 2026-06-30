@@ -24,3 +24,8 @@ o Write code to ensure that the Logger class follows the Singleton design patter
 4. Test the Singleton Implementation:
 
 o Create a test class to verify that only one instance of Logger is created and used across the application.
+
+
+
+
+
