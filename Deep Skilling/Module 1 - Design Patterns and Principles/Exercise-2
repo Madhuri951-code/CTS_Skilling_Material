@@ -1,0 +1,119 @@
+FactoryMethodPatternExample
+
+Step 1: Document.java
+
+public interface Document {
+    void open();
+}
+
+
+Step 2: WordDocument.java
+
+public class WordDocument implements Document {
+
+    @Override
+    public void open() {
+        System.out.println("Word Document Created Successfully.");
+    }
+}
+
+Step 3: PdfDocument.java
+
+public class PdfDocument implements Document {
+
+    @Override
+    public void open() {
+        System.out.println("PDF Document Created Successfully.");
+    }
+}
+
+
+Step 4: ExcelDocument.java
+
+public class ExcelDocument implements Document {
+
+    @Override
+    public void open() {
+        System.out.println("Excel Document Created Successfully.");
+    }
+}
+
+
+Step 5: DocumentFactory.java
+
+public abstract class DocumentFactory {
+
+    public abstract Document createDocument();
+
+}
+
+
+Step 6: WordDocumentFactory.java
+
+public class WordDocumentFactory extends DocumentFactory {
+
+    @Override
+    public Document createDocument() {
+        return new WordDocument();
+    }
+
+}
+
+
+Step 7: PdfDocumentFactory.java
+
+public class PdfDocumentFactory extends DocumentFactory {
+
+    @Override
+    public Document createDocument() {
+        return new PdfDocument();
+    }
+
+}
+
+
+Step 8: ExcelDocumentFactory.java
+
+
+public class ExcelDocumentFactory extends DocumentFactory {
+
+    @Override
+    public Document createDocument() {
+        return new ExcelDocument();
+    }
+
+}
+
+
+Step 9: FactoryMethodTest.java
+
+
+public class FactoryMethodTest {
+
+    public static void main(String[] args) {
+
+        DocumentFactory wordFactory = new WordDocumentFactory();
+        Document word = wordFactory.createDocument();
+        word.open();
+
+        DocumentFactory pdfFactory = new PdfDocumentFactory();
+        Document pdf = pdfFactory.createDocument();
+        pdf.open();
+
+        DocumentFactory excelFactory = new ExcelDocumentFactory();
+        Document excel = excelFactory.createDocument();
+        excel.open();
+    }
+}
+
+
+
+
+Output:
+
+Word Document Created Successfully.
+PDF Document Created Successfully.
+Excel Document Created Successfully.
+
+
+
