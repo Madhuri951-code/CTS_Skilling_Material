@@ -1,0 +1,40 @@
+Exercise 3(a): Recursive CTE
+
+WITH Dates AS
+(
+SELECT CAST('2025-01-01' AS DATE) AS DateValue
+
+UNION ALL
+
+SELECT DATEADD(DAY,1,DateValue)
+FROM Dates
+WHERE DateValue<'2025-01-31'
+)
+
+SELECT *
+FROM Dates;
+
+Exercise 3(b): Create Staging Table
+
+CREATE TABLE StagingProducts
+(
+ProductID INT,
+ProductName VARCHAR(50),
+Price DECIMAL(10,2)
+);
+
+Exercise 3(c): MERGE
+
+MERGE Products AS P
+
+USING StagingProducts AS S
+
+ON P.ProductID=S.ProductID
+
+WHEN MATCHED THEN
+UPDATE SET P.Price=S.Price
+
+WHEN NOT MATCHED THEN
+INSERT(ProductID,ProductName,Price)
+VALUES(S.ProductID,S.ProductName,S.Price);
+
