@@ -1,0 +1,47 @@
+Exercise 1: ROW_NUMBER(), RANK(), DENSE_RANK()
+
+ROW_NUMBER()
+ROW_NUMBER() → Unique rank
+
+SELECT
+ProductID,
+ProductName,
+Category,
+Price,
+ROW_NUMBER() OVER
+(
+PARTITION BY Category
+ORDER BY Price DESC
+) AS RowNumber
+FROM Products;
+
+RANK()
+RANK() → Same rank for ties (skips next rank)
+
+SELECT
+ProductID,
+ProductName,
+Category,
+Price,
+RANK() OVER
+(
+PARTITION BY Category
+ORDER BY Price DESC
+) AS RankNumber
+FROM Products;
+
+DENSE_RANK()
+DENSE_RANK() → Same rank for ties (no skipped ranks)
+
+SELECT
+ProductID,
+ProductName,
+Category,
+Price,
+DENSE_RANK() OVER
+(
+PARTITION BY Category
+ORDER BY Price DESC
+) AS DenseRank
+FROM Products;
+
