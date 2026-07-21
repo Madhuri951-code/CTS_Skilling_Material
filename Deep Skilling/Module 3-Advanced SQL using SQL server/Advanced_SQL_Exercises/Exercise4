@@ -1,0 +1,35 @@
+Exercise 4: PIVOT
+
+SELECT *
+FROM
+(
+SELECT
+ProductName,
+MONTH(OrderDate) AS MonthNo,
+Quantity
+FROM Orders o
+JOIN OrderDetails od
+ON o.OrderID=od.OrderID
+JOIN Products p
+ON od.ProductID=p.ProductID
+) A
+
+PIVOT
+(
+SUM(Quantity)
+FOR MonthNo IN([1],[2],[3],[4])
+) P;
+
+UNPIVOT
+
+SELECT
+ProductName,
+MonthNo,
+Quantity
+FROM PivotTable
+
+UNPIVOT
+(
+Quantity
+FOR MonthNo IN([1],[2],[3],[4])
+) U;
