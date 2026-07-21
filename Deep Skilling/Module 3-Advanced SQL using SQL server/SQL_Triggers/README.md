@@ -97,7 +97,7 @@ After completing this experiment, I learned:
 
 ## Author
 
-**Name:** Jyothirmai Chapala
+**Name:** Gundlakunta Madhuri
 
 **Course:** Cognizant Deepskilling Nurture 5.0
 
