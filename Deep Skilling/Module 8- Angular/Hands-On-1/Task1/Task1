@@ -1,0 +1,21 @@
+  Task 1: Scaffold and Explore the Angular Project
+Goal: Create the Angular workspace and understand what each generated file does.
+Steps:
+1. Run ng new student-course-portal --routing --style=css. Accept defaults for all prompts.
+2. Open the project in VS Code. For each of the following files, write a one-line comment in a notes.txt 
+file explaining its purpose: angular.json, tsconfig.json, tsconfig.app.json, package.json, src/main.ts, 
+src/app/app.module.ts (or app.config.ts in standalone mode), src/app/app.component.ts, 
+src/index.html.
+3. Run ng serve and open http://localhost:4200. Verify the default Angular welcome page loads.
+4. Run ng build and inspect the dist/ folder. Note the generated files — identify which file contains the 
+compiled application code.
+5. In angular.json, locate the budgets configuration under architect > build > configurations > production. 
+Note the maximumWarning and maximumError thresholds — document what these control.
+Hint:
+• Angular 17+ defaults to standalone components (no NgModules required). Angular 20 continues this 
+pattern. If you see app.config.ts instead of app.module.ts, your project is using the standalone API — which 
+is the modern approach.
+• src/main.ts is the application entry point — it bootstraps either the AppModule or the root component 
+directly.
+Expected Outcome: ng serve runs without errors. notes.txt contains explanations for all 8 files. ng build 
+produces a dist/ folder.
