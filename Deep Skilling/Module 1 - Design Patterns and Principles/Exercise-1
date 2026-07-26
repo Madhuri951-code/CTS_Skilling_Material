@@ -1,31 +1,202 @@
-Exercise 1: Implementing the Singleton Pattern
-Scenario:
+# Exercise 1: Implementing the Singleton Pattern
 
-You need to ensure that a logging utility class in your application has only one instance throughout the application lifecycle to ensure consistent logging.
+## Objective
 
-Steps:
+- Understand the Singleton Design Pattern.
+- Implement a Singleton class in Java.
+- Ensure that only one instance of the `Logger` class exists throughout the application.
+- Verify the Singleton implementation using a test class.
 
-1. Create a New Java Project:
+---
 
-o Create a new Java project named SingletonPatternExample.
+## Prerequisites
 
-2. Define a Singleton Class:
+- Java Development Kit (JDK 8 or later)
+- Eclipse IDE / IntelliJ IDEA / VS Code
+- Basic knowledge of Java classes and objects
 
-o Create a class named Logger that has a private static instance of itself.
+---
 
-o Ensure the constructor of Logger is private.
+# Step 1: Create a New Java Project
 
-o Provide a public static method to get the instance of the Logger class.
+### Project Name
 
-3. Implement the Singleton Pattern:
+```text
+SingletonPatternExample
+```
 
-o Write code to ensure that the Logger class follows the Singleton design pattern.
+### Procedure
 
-4. Test the Singleton Implementation:
+1. Open your Java IDE.
+2. Create a new Java Project.
+3. Name the project **SingletonPatternExample**.
+4. Click **Finish**.
 
-o Create a test class to verify that only one instance of Logger is created and used across the application.
+---
 
+# Step 2: Create the `Logger` Class
 
+### File Name
 
+```text
+Logger.java
+```
 
+### Code
 
+```java
+public class Logger {
+
+    // Create a private static instance
+    private static Logger instance;
+
+    // Private constructor
+    private Logger() {
+        System.out.println("Logger Instance Created");
+    }
+
+    // Public method to return the single instance
+    public static Logger getInstance() {
+
+        if (instance == null) {
+            instance = new Logger();
+        }
+
+        return instance;
+    }
+
+    // Logging method
+    public void log(String message) {
+        System.out.println("Log: " + message);
+    }
+}
+```
+
+---
+
+# Step 3: Create the Test Class
+
+### File Name
+
+```text
+SingletonTest.java
+```
+
+### Code
+
+```java
+public class SingletonTest {
+
+    public static void main(String[] args) {
+
+        Logger logger1 = Logger.getInstance();
+
+        Logger logger2 = Logger.getInstance();
+
+        logger1.log("Application Started");
+
+        logger2.log("Application Running");
+
+        if (logger1 == logger2) {
+            System.out.println("Only one Logger instance exists.");
+        } else {
+            System.out.println("Multiple Logger instances exist.");
+        }
+
+    }
+
+}
+```
+
+---
+
+# Step 4: Compile the Program
+
+### Command
+
+```bash
+javac Logger.java SingletonTest.java
+```
+
+### Output
+
+```text
+(No output)
+```
+
+---
+
+# Step 5: Execute the Program
+
+### Command
+
+```bash
+java SingletonTest
+```
+
+### Output
+
+```text
+Logger Instance Created
+Log: Application Started
+Log: Application Running
+Only one Logger instance exists.
+```
+
+---
+
+# Project Structure
+
+```text
+SingletonPatternExample
+│
+├── Logger.java
+└── SingletonTest.java
+```
+
+---
+
+# Explanation
+
+- The constructor of the `Logger` class is declared **private**, preventing direct object creation.
+- The static method `getInstance()` creates the object only once.
+- Every subsequent call to `getInstance()` returns the same object.
+- This guarantees that only one instance of the `Logger` class exists throughout the application.
+
+---
+
+# Verification
+
+## Class Diagram
+
+```text
+             +------------------+
+             |      Logger      |
+             +------------------+
+             | - instance       |
+             +------------------+
+             | - Logger()       |
+             | + getInstance()  |
+             | + log()          |
+             +------------------+
+```
+
+---
+
+## Expected Output
+
+```text
+Logger Instance Created
+Log: Application Started
+Log: Application Running
+Only one Logger instance exists.
+```
+
+---
+
+# Result
+
+- Successfully created a Java project named **SingletonPatternExample**.
+- Implemented the Singleton Design Pattern using the `Logger` class.
+- Ensured that only one instance of the `Logger` class is created.
+- Verified the Singleton implementation through the test class.
