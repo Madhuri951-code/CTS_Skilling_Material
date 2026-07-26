@@ -18,16 +18,16 @@ Step 3: Create a .log File
 Command
 **echo "Git Ignore Demo" > sample.log**
 Output
-(No output)
-Step 4: Create a Log Folder
+(No output)                                                                           
+Step 4: Create a Log Folder                                                                                                               
 Command
-**mkdir log**
-**echo "Test File" > log/test.txt**
-Output
-(No output)
-Step 5: Check Git Status
-Command
-**git status**
+**mkdir log**                                               
+**echo "Test File" > log/test.txt**                                                                                 
+Output                                                                                                                                        
+(No output)                                                                                                                                                 
+Step 5: Check Git Status                                                                                                                        
+Command                                                                                          
+**git status**                                                                                                                                              
 Output
 On branch master
 
@@ -40,16 +40,16 @@ Untracked files:
 nothing added to commit but untracked files present
 
 Observation:
-At this stage, Git detects both the .log file and the log folder.
+At this stage, Git detects both the .log file and the log folder.                                                                                              
 
-Step 6: Create .gitignore
+Step 6: Create .gitignore                                                                 
 Command
 **touch .gitignore**
 Output
-(No output)
+(No output)                                                                                                                                            
 Step 7: Edit .gitignore
 Command
-**notepad .gitignore**
+**notepad .gitignore**                                                                                                                                      
 
 or
 
@@ -84,8 +84,8 @@ Step 9: Add .gitignore
 Command
 **git add .gitignore**
 Output
-(No output)
-Step 10: Check Git Status
+(No output)                                                                                                                                
+Step 10: Check Git Status                                                                   
 Command
 **git status**
 Output
@@ -94,7 +94,7 @@ On branch master
 Changes to be committed:
 
         new file:   .gitignore
-Step 11: Commit Changes
+Step 11: Commit Changes                                                                                                                     
 Command
 **git commit -m "Added .gitignore to ignore log files and folders"**
 Sample Output
@@ -102,9 +102,9 @@ Sample Output
  1 file changed, 2 insertions(+)
  create mode 100644 .gitignore
 
-Note: The commit ID (e.g., 4d8f9ab) will be different on your system.
+Note: The commit ID (e.g., 4d8f9ab) will be different on your system.                                                                                                  
 
-Step 12: Push to the Remote Repository
+Step 12: Push to the Remote Repository                                                                                                     
 If your branch is master
 Command
 **git push origin master**
@@ -118,8 +118,8 @@ Writing objects: 100% (3/3), 289 bytes | 289.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 
 To https://github.com/username/repository.git
-   7a2e8c1..4d8f9ab  master -> master
-Step 13: Final Verification
+   7a2e8c1..4d8f9ab  master -> master                                                                                                                  
+Step 13: Final Verification                                                                                                                                              
 Command
 **git status**
 Output
