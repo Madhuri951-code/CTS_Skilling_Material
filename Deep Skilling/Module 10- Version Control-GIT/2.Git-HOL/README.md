@@ -1,22 +1,20 @@
-Hands-on Lab: Using .gitignore to Ignore Unwanted Files
-Objective
-Explain Git Ignore.
-Ignore unwanted files and folders using .gitignore.
-Verify that ignored files are not tracked by Git.
-Step 1: Navigate to the Git Repository
-Command
-**cd /c/Users/madhu/Documents/MyRepository**
+**Hands-on Lab: Using .gitignore to Ignore Unwanted Files**                                                                                                           
+***Objective***                                                                                       
+Explain Git Ignore.                                                                                                                                    
+Ignore unwanted files and folders using .gitignore.                                                                                                     
+Verify that ignored files are not tracked by Git.                                                                                                                  
+Step 1: Navigate to the Git Repository                                                                                                
+Command                                                                 
+**cd /c/Users/madhu/Documents/MyRepository**                                                                                             
+Output                                                                                                                      
+madhu@MADHURIREDDY MINGW64 ~/Documents/MyRepository (master)                                                                                                             
+$                                                                                                                      
+Step 2: Check Git Status                                                                                                                        
+Command                                                                                              
+**git status**                                                                                                                                      
 Output
-madhu@MADHURIREDDY MINGW64 ~/Documents/MyRepository (master)
-$
-Step 2: Check Git Status
-Command
-**git status**
-Output
-On branch master
-
-nothing to commit, working tree clean
-Step 3: Create a .log File
+On branch master nothing to commit, working tree clean                                                                                        
+Step 3: Create a .log File                                                                                                                                        
 Command
 **echo "Git Ignore Demo" > sample.log**
 Output
